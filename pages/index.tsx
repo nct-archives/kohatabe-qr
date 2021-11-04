@@ -28,7 +28,41 @@ const Home: NextPage = () => {
   return (
     <div>
       <Head>
-        <title>小春六花はヨーグルトが食べたい 特典受取り</title>
+        <title>
+          小春六花はヨーグルトが食べたい 参加特典 現地受取り支援システム
+        </title>
+        <meta
+          property="og:title"
+          content="小春六花はヨーグルトが食べたい 参加特典 現地受取り支援システム"
+        ></meta>
+        <meta
+          property="og:description"
+          content="コハタベ各種企画の参加特典を受け取る際の手続きを簡略化します。"
+        ></meta>
+        <meta name="keywords" content="小春六花,オンリーイベント"></meta>
+        <meta property="og:type" content="website"></meta>
+        <meta property="og:url" content="https://kohatabe.jp"></meta>
+        <meta property="og:image" content="https://kohatabe.jp/icon.png"></meta>
+        <meta
+          property="og:site_name"
+          content="小春六花はヨーグルトが食べたい 参加特典 現地受取り支援システム"
+        ></meta>
+        <meta name="twitter:card" content="summary"></meta>
+        <meta name="twitter:site" content="@nct_kohatabe"></meta>
+        <meta name="twitter:url" content="https://kohatabe.jp/icon.png"></meta>
+        <meta
+          name="twitter:title"
+          content="小春六花はヨーグルトが食べたい 参加特典 現地受取り支援システム"
+        ></meta>
+        <meta
+          name="twitter:description"
+          content="コハタベ各種企画の参加特典を受け取る際の手続きを簡略化します。"
+        ></meta>
+        <meta
+          name="twitter:image"
+          content="https://kohatabe.jp/icon.png"
+        ></meta>
+        <link rel="canonical" href="https://kohatabe.jp" />
       </Head>
       <div className={styles.header}>
         <Link href="/">
@@ -42,9 +76,15 @@ const Home: NextPage = () => {
           </a>
         </Link>
         <br />
-        特典受取り
+        参加特典 現地受取り支援システム
       </div>
       <main className={styles.main}>
+        <p>
+          開催記念合同誌、ヨーグルト動画投稿祭の参加特典を配布する際の本人確認をいたします。
+          <br />
+          フォーム送信時にご入力いただいたメールアドレスをご入力いただき、表示されたQRコードをサークルメンバーにお見せください。
+        </p>
+
         {error ? (
           <div className={`${styles.alert} ${styles.alert_danger}`}>
             {error}
@@ -75,6 +115,7 @@ const Home: NextPage = () => {
               onChange={(e) => setEmailInput(e.target.value)}
               onKeyPress={(e) => {
                 if (e.key == 'Enter') {
+                  e.preventDefault()
                   applyEmail()
                 }
               }}

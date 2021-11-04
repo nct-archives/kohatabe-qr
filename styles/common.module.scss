@@ -7,6 +7,7 @@
   background-color: #fafafa;
   color: #222222;
   text-align: center;
+  border-bottom: 3px solid #eeeeee;
 }
 
 .formPart {
@@ -29,11 +30,11 @@
   // color: #878787;
   background-color: transparent;
   border: none;
-  border-bottom: 2px solid #878787;
+  border: 2px solid #878787;
 
   &:focus {
     outline: none;
-    border-bottom: 2px solid #039bd7;
+    border: 2px solid #039bd7;
   }
 
   &:disabled {
@@ -46,7 +47,7 @@
 
   &:focus ~ &_label,
   &:not(:placeholder-shown) ~ &_label {
-    transform: translateY(0) scale(0.8);
+    transform: translateX(-5px) translateY(-0.5em) scale(0.8);
   }
 
   &_label {
@@ -54,7 +55,7 @@
     padding-left: 10px;
     order: 1;
     transition: transform 0.2s;
-    transform: translateY(1.5em) scale(1);
+    transform: translateY(1.75em) scale(1);
     transform-origin: 0 100%;
     color: #878787;
     pointer-events: none;
@@ -127,7 +128,7 @@
   padding: 20px;
   margin-bottom: 10px;
   border-radius: 20px;
-  box-shadow: 0 5px 10px #039bd7aa;
+  // box-shadow: 0 5px 10px #039bd7aa;
   text-align: center;
   background-color: #039bd7;
 
