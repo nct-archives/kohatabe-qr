@@ -1,0 +1,140 @@
+.main {
+  padding: 20px;
+}
+
+.header {
+  padding: 20px;
+  background-color: #fafafa;
+  color: #222222;
+  text-align: center;
+}
+
+.formPart {
+  display: flex;
+  flex-direction: column;
+}
+.input {
+  display: block;
+  width: 100%;
+
+  font-size: 1em;
+  order: 2;
+
+  margin-bottom: 5px;
+  padding: 10px;
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  // color: #878787;
+  background-color: transparent;
+  border: none;
+  border-bottom: 2px solid #878787;
+
+  &:focus {
+    outline: none;
+    border-bottom: 2px solid #039bd7;
+  }
+
+  &:disabled {
+    background-color: #87878744;
+  }
+
+  &::placeholder {
+    color: transparent;
+  }
+
+  &:focus ~ &_label,
+  &:not(:placeholder-shown) ~ &_label {
+    transform: translateY(0) scale(0.8);
+  }
+
+  &_label {
+    display: block;
+    padding-left: 10px;
+    order: 1;
+    transition: transform 0.2s;
+    transform: translateY(1.5em) scale(1);
+    transform-origin: 0 100%;
+    color: #878787;
+    pointer-events: none;
+  }
+}
+
+.help {
+  display: block;
+  padding: 5px;
+  margin-top: -5px;
+  margin-bottom: 10px;
+  // color: #ffffff;
+  background-color: #039bd788;
+
+  .formPart & {
+    order: 3;
+  }
+
+  .formPart:not(:focus-within) & {
+    background-color: #eaeaea;
+  }
+}
+
+.button {
+  display: block;
+  width: 100%;
+
+  padding: 15px;
+  margin-bottom: 5px;
+
+  text-align: center;
+
+  &:first-child {
+    margin-top: 5px;
+  }
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  background-color: #039bd7;
+  color: #ffffff;
+
+  &:active {
+    background-color: #04648a;
+  }
+
+  &_danger {
+    background-color: #d6534b;
+    color: #ffffff;
+
+    &:active {
+      background-color: #a53f3a;
+    }
+  }
+}
+
+.alert {
+  margin-bottom: 10px;
+  padding: 10px;
+
+  background-color: #3ba05888;
+
+  &_danger {
+    background-color: #d6534b88;
+  }
+}
+
+.qrCodeArea {
+  padding: 20px;
+  margin-bottom: 10px;
+  border-radius: 20px;
+  box-shadow: 0 5px 10px #039bd7aa;
+  text-align: center;
+  background-color: #039bd7;
+
+  &_content {
+    padding-top: 10px;
+    color: #ffffff;
+    font-size: 1.5em;
+    font-weight: bold;
+  }
+}
