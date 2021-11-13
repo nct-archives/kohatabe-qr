@@ -103,8 +103,12 @@ const Home: NextPage = () => {
         {email ? (
           <div className={styles.codeArea}>
             <div className={styles.codeArea_codeWrap}>
-              {/* <QRCode value={email} includeMargin={true} size={150}></QRCode> */}
-              <ReactJsBarcode
+              <QRCode
+                value={`${email}@${domain}`}
+                includeMargin={true}
+                size={150}
+              ></QRCode>
+              {/* <ReactJsBarcode
                 className={styles.codeArea_code}
                 value={email}
                 options={{ format: 'code39', displayValue: false }}
@@ -113,7 +117,7 @@ const Home: NextPage = () => {
                 className={styles.codeArea_code}
                 value={domain}
                 options={{ format: 'code39', displayValue: false }}
-              />
+              /> */}
             </div>
             <div className={styles.codeArea_content}>
               {email}@{domain}
