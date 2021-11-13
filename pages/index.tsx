@@ -7,22 +7,29 @@ import Link from 'next/link'
 import styles from '../styles/common.module.scss'
 
 import QRCode from 'qrcode.react'
+import ReactJsBarcode from 'react-jsbarcode'
 
 const Home: NextPage = () => {
   const [error, setError] = useState('')
 
   const [emailInput, setEmailInput] = useState('')
   const [email, setEmail] = useState('')
+  const [domain, setDomain] = useState('')
 
   const applyEmail = () => {
     setError('')
     setEmail('')
 
-    if (!emailInput) {
+    const emailObj = emailInput.split('@')
+    console.log(emailObj)
+
+    if (!emailInput || emailObj.length !== 2) {
       setError('メールアドレスを入力してください')
       return
     }
-    setEmail(emailInput)
+
+    setEmail(emailObj[0])
+    setDomain(emailObj[1])
   }
 
   return (
@@ -82,7 +89,7 @@ const Home: NextPage = () => {
         <p>
           開催記念合同誌、ヨーグルト動画投稿祭の参加特典を配布する際の本人確認をいたします。
           <br />
-          フォーム送信時にご入力いただいたメールアドレスをご入力いただき、表示されたQRコードをサークルメンバーにお見せください。
+          フォーム送信時にご入力いただいたメールアドレスをご入力いただき、表示されたバーコードをサークルメンバーにお見せください。
         </p>
 
         {error ? (
@@ -94,11 +101,23 @@ const Home: NextPage = () => {
         )}
 
         {email ? (
-          <div className={styles.qrCodeArea}>
-            <div className={styles.qrCodeArea_code}>
-              <QRCode value={email} includeMargin={true} size={150}></QRCode>
+          <div className={styles.codeArea}>
+            <div className={styles.codeArea_codeWrap}>
+              {/* <QRCode value={email} includeMargin={true} size={150}></QRCode> */}
+              <ReactJsBarcode
+                className={styles.codeArea_code}
+                value={email}
+                options={{ format: 'code39', displayValue: false }}
+              />
+              <ReactJsBarcode
+                className={styles.codeArea_code}
+                value={domain}
+                options={{ format: 'code39', displayValue: false }}
+              />
             </div>
-            <div className={styles.qrCodeArea_content}>{email}</div>
+            <div className={styles.codeArea_content}>
+              {email}@{domain}
+            </div>
           </div>
         ) : (
           <></>
@@ -132,7 +151,7 @@ const Home: NextPage = () => {
               applyEmail()
             }}
           >
-            QRコードを表示
+            バーコードを表示
           </button>
         </form>
       </main>

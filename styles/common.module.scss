@@ -124,13 +124,17 @@
   }
 }
 
-.qrCodeArea {
+.codeArea {
   padding: 20px;
   margin-bottom: 10px;
   border-radius: 20px;
   // box-shadow: 0 5px 10px #039bd7aa;
   text-align: center;
   background-color: #039bd7;
+
+  &_code {
+    width: 100%;
+  }
 
   &_content {
     padding-top: 10px;

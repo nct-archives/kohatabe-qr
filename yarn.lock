@@ -2195,6 +2195,11 @@ js-yaml@^3.13.1:
     argparse "^1.0.7"
     esprima "^4.0.0"
 
+jsbarcode@^3.11.5:
+  version "3.11.5"
+  resolved "https://registry.yarnpkg.com/jsbarcode/-/jsbarcode-3.11.5.tgz#390b3efd0271f35b9d68c7b8af6e972445969014"
+  integrity sha512-zv3KsH51zD00I/LrFzFSM6dst7rDn0vIMzaiZFL7qusTjPZiPtxg3zxetp0RR7obmjTw4f6NyGgbdkBCgZUIrA==
+
 jsbn@~0.1.0:
   version "0.1.1"
   resolved "https://registry.yarnpkg.com/jsbn/-/jsbn-0.1.1.tgz#a5e654c2e5a2deb5f201d96cefbca80c0ef2f513"
@@ -3093,6 +3098,13 @@ react-is@^16.8.1:
   version "16.13.1"
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-16.13.1.tgz#789729a4dc36de2999dc156dd6c1d9c18cea56a4"
   integrity sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ==
+
+react-jsbarcode@^0.2.3:
+  version "0.2.3"
+  resolved "https://registry.yarnpkg.com/react-jsbarcode/-/react-jsbarcode-0.2.3.tgz#0bbf7ce600ba31fcf0f01a66368e1e81b34ddb95"
+  integrity sha512-1f3dijSCsXnJ9qMwmSRS2167HS8R3DMOhRivbvzgjKYpTQ7XS9FU/0nx5wIi8VjF8rvVUlMaaydEjIwU/lBX3g==
+  dependencies:
+    jsbarcode "^3.11.5"
 
 react-refresh@0.8.3:
   version "0.8.3"
